@@ -17,13 +17,15 @@ z7 = empty space
 	#include "map_files\MetaStation\MetaStation.v41A.II.dmm"
 	#include "map_files\MetaStation\z2.dmm"
 	#include "map_files\generic\Lavaland.dmm"
+	#include "map_files\generic\syndicatebase.dmm"
 
 	#define MAP_FILE "MetaStation.v41A.II.dmm"
 	#define MAP_NAME "MetaStation"
 	#define MAP_TRANSITION_CONFIG list(\
 DECLARE_LEVEL(MAIN_STATION, CROSSLINKED, list(STATION_LEVEL, STATION_CONTACT, REACHABLE, AI_OK)),\
 DECLARE_LEVEL(CENTCOMM, SELFLOOPING, list(ADMIN_LEVEL, BLOCK_TELEPORT, IMPEDES_MAGIC)),\
-DECLARE_LEVEL(MINING, SELFLOOPING, list(ORE_LEVEL, REACHABLE, STATION_CONTACT, HAS_WEATHER, AI_OK)))
+DECLARE_LEVEL(MINING, SELFLOOPING, list(ORE_LEVEL, REACHABLE, STATION_CONTACT, HAS_WEATHER, AI_OK)),\
+DECLARE_LEVEL(RAMSS_TAIPAN, CROSSLINKED, list(REACHABLE)))
 
 	#define USING_MAP_DATUM /datum/map/metastation
 
