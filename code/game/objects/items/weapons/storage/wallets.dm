@@ -34,14 +34,12 @@
 	var/obj/item/storage/wallet/wallet = null
 
 /obj/item/storage/wallet/proc/id_check()
-	front_id = (locate(/obj/item/card/id) in contents)
-	if (front_id != null )
-		item_state = front_id.item_state
-		name = "[item_color] leather wallet with [front_id] on the front"
-		return TRUE
-	front_id = null
-	name = "[item_color] leather wallet"
-	return FALSE
+	front_id = locate(/obj/item/card/id) in contents
+	if(!front_id)
+		name = "[item_color] leather wallet"
+		return FALSE
+	name = "[item_color] leather wallet with [front_id] on the front"
+	return TRUE
 
 
 /obj/item/storage/wallet/remove_from_storage(obj/item/W as obj, atom/new_location)
