@@ -214,6 +214,7 @@
 		holder.icon_state = "hud[ckey(wear_id.GetJobName())]"
 	else
 		holder.icon_state = "hudunknown"
+	sec_hud_set_security_status()
 
 
 /mob/living/carbon/human/proc/sec_hud_set_implants()

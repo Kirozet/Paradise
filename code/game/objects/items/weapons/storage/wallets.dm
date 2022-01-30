@@ -30,7 +30,7 @@
 	slot_flags = SLOT_ID
 
 	var/obj/item/card/id/front_id = null
-	var/obj/item/storage/wallet/front_id_overlay = null
+	var/image/front_id_overlay = null
 
 /obj/item/storage/wallet/proc/id_check()
 	front_id = (locate(/obj/item/card/id) in contents)
@@ -60,19 +60,20 @@
 		update_icon()
 
 /obj/item/storage/wallet/update_icon()
-	overlays -= image('icons/obj/wallets.dmi', front_id_overlay)
+	overlays -= front_id_overlay
 
 	if(!front_id)
 		front_id_overlay = null
 		return
 
-	front_id_overlay = front_id.icon_state
-	if (copytext(front_id_overlay,1,4) == "ERT")
-		front_id_overlay = "ERT"
-	else if(!front_id_overlay in icon_states(src.icon))
-		front_id_overlay = "id"
+	var/front_id_icon_state_holder = front_id.icon_state
+	if (copytext(front_id_icon_state_holder,1,4) == "ERT")
+		front_id_icon_state_holder = "ERT"
+	else if(!front_id_icon_state_holder in icon_states(src.icon))
+		front_id_icon_state_holder = "id"
 
-	overlays += image('icons/obj/wallets.dmi', front_id_overlay)
+	front_id_overlay = image('icons/obj/wallets.dmi', front_id_icon_state_holder)
+	overlays += front_id_overlay
 
 	if(!ishuman(loc))
 		return
