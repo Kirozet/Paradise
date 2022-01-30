@@ -75,6 +75,7 @@
 	front_id_overlay = image('icons/obj/wallets.dmi', front_id_icon_state_holder)
 	overlays += front_id_overlay
 
+
 	if(!ishuman(loc))
 		return
 	var/mob/living/carbon/human/H = loc

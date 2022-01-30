@@ -216,7 +216,6 @@
 		holder.icon_state = "hudunknown"
 	sec_hud_set_security_status()
 
-
 /mob/living/carbon/human/proc/sec_hud_set_implants()
 	var/image/holder
 	for(var/i in list(IMPTRACK_HUD, IMPMINDSHIELD_HUD, IMPCHEM_HUD))

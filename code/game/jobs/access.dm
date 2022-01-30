@@ -491,6 +491,10 @@
 		var/obj/item/pda/P = src
 		assignmentName = P.ownjob
 		rankName = P.ownrank
+	else if(istype(src, /obj/item/storage/wallet))
+		var/obj/item/storage/wallet/wallet = src
+		assignmentName = wallet.front_id?.assignment
+		rankName = wallet.front_id?.rank
 	else if(istype(src, /obj/item/card/id))
 		var/obj/item/card/id/I = src
 		assignmentName = I.assignment
