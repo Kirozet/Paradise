@@ -72,7 +72,7 @@
 	else if(!front_id_overlay in icon_states(src.icon))
 		front_id_overlay = "id"
 
-	overlays += image('icons/obj/wallets.dmi', front_id_overlay)
+	overlays += image('icons/obj/wallets.dmi', front_id_overlay)	
 
 	if(!ishuman(loc))
 		return
